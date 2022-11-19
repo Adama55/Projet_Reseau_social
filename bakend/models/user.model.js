@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const {isEmail} = requi('validator')
+const {isEmail} = require('validator')
 
-const userShema = new mongoose.Schema (
+const userSchema = new mongoose.Schema (
     {
         pseudo: {
             type: String,
@@ -22,7 +22,20 @@ const userShema = new mongoose.Schema (
             type: String,
             required: true,
             max: 1024,
+            minLength:6,
+        },
+        bio : {
+            type: String,
+            max: 1024,
+        },
+        followers: {
+            type : [String]
         }
-
+    },
+    {
+        timestamps: true,
     }
 )
+
+const UserModel = mongoose.model('user', userSchema)
+module.exports = UserModel
