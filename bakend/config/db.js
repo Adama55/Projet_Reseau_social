@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb+srv://" + process.env.DB_USER_PASS + "@atlascluster.q4jzdlf.mongodb.net/test",
+mongoose.connect("mongodb+srv://" + process.env.DB_USER_PASS + "@atlascluster.q4jzdlf.mongodb.net/projetRS",
   { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
